@@ -1,0 +1,13 @@
+first_task:
+  script:
+    - echo "Выполнение 1 задачи"
+
+second_task:
+  needs: ["first_task"]
+  script:
+    - echo "Выполнение 2 задачи"
+
+third_task:
+  needs: [first_task]
+  script:
+    - echo "Выполнение 3 задачи"
