@@ -1,0 +1,27 @@
+on:
+  push:
+    branches: [ "master", "main" ]
+
+jobs:
+  initial_step:
+    name: Build and Setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Initial Task
+        run: echo "Первая задача выполнена."
+
+  test_step:
+    name: Testing
+    needs: initial_step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Tests
+        run: echo "Вторая задача запущена."
+
+  lint_step:
+    name: Linting
+    needs: initial_step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Linter
+        run: echo "Третья задача запущена."
